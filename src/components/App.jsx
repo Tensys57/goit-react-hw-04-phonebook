@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { ContactForm } from './ContactForm/ContactForm';
 import { Contacts } from './Contacts/Contacts';
 import { Filter } from './Filter/Filter';
+import css from './App.module.css';
+
 const LOCAL_STORAGE_CONTACTS_KEY = 'contacts';
 
 export const App = () => {
@@ -44,10 +46,10 @@ export const App = () => {
   };
 
   return (
-    <div className="container">
-      <h3>Phonebook</h3>
+    <div className={css.container}>
+      <p className={css.main}>Phonebook</p>
       <ContactForm onSubmitContact={handleFormSubmit} />
-      <h4>Contacts</h4>
+      <p className={css.title}>Contacts</p>
       <Filter value={filter} onChange={changeFilter} />
       <Contacts
         contacts={getFilteredContacts()}
