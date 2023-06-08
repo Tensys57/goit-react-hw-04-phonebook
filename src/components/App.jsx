@@ -44,19 +44,10 @@ export const App = () => {
   };
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-    >
-      <h1>Phonebook</h1>
+    <div className="container">
+      <h3>Phonebook</h3>
       <ContactForm onSubmitContact={handleFormSubmit} />
-      <h2>Contacts</h2>
+      <h4>Contacts</h4>
       <Filter value={filter} onChange={changeFilter} />
       <Contacts
         contacts={getFilteredContacts()}
